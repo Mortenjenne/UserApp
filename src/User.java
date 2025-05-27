@@ -65,7 +65,7 @@ public class User implements Comparable<User> {
         this.phoneNumber = phoneNumber;
     }
 
-    private boolean isNameValid(String name) {
+    public boolean isNameValid(String name) {
         if (name == null) {
             return false;
         }
@@ -82,7 +82,7 @@ public class User implements Comparable<User> {
         return true;
     }
 
-    private boolean isEmailValid(String email) {
+    public boolean isEmailValid(String email) {
         if (email == null || email.isEmpty()) {
             return false;
         }
@@ -116,7 +116,7 @@ public class User implements Comparable<User> {
         }
 
         if (stringBuilder.length() >= 2) {
-            stringBuilder.setLength(stringBuilder.length() - 2);
+            stringBuilder.setLength(stringBuilder.length() - 3);
         }
 
         return stringBuilder.toString();
