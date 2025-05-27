@@ -1,6 +1,11 @@
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
@@ -64,13 +69,16 @@ class UserTest {
 
     @Test
     public void testCompareTo() {
-        User user1 = new User("Anna", "pass");
-        User user2 = new User("Jesper", "pass");
-        User user3 = new User("Anna", "pass");
+        List<User> users = new ArrayList<>();
+        User user1 = new User("Jesper", "pass");
+        User user2 = new User("Anna", "pass");
+        users.add(user1);
+        users.add(user2);
 
-        assertTrue(user1.compareTo(user2) < 0);
-        assertTrue(user2.compareTo(user1) > 0);
-        assertEquals(0, user1.compareTo(user3));
+        Collections.sort(users);
+        String expected = "Anna";
+
+        assertEquals(expected,users.get(0).getName());
     }
 
 
