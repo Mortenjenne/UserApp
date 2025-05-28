@@ -4,12 +4,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
         List<User> userData = addUsers();
         userData = sortUsersByName(userData);
         printUsers(userData);
     }
 
     private static void printUsers(List<User> users){
+        if(users == null || users.isEmpty()){
+            System.out.println("The list is empty, cannot be printed");
+            return;
+        }
         for(User user: users){
             System.out.println(user);
         }
@@ -22,6 +27,7 @@ public class Main {
 
     private static List<User> addUsers() {
         List<User> users = new ArrayList<>();
+
         users.add(new User("Jesper", "repseJ1234"));
         users.add(new User("Anders", "And123"));
         users.add(new User("Morten", "M1234"));
