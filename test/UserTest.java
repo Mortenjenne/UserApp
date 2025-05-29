@@ -24,6 +24,7 @@ class UserTest {
         assertTrue(user.isNameValid("LotteLottelo"));
     }
 
+    @Test
     public void testInvalidNames() {
         assertFalse(user.isNameValid("morten"));
         assertFalse(user.isNameValid("A"));

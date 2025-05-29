@@ -33,7 +33,6 @@ public class User implements Comparable<User> {
             System.out.println("Invalid name! Name will be set default to: Unknown" + "\n" + "Requirements: Name must start with a capital letter - min 2 characters and max 12 characters long");
             this.name = "Unknown";
         }
-
     }
 
     public String getPassword() {
