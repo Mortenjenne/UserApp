@@ -2,7 +2,7 @@ public class User implements Comparable<User> {
     private String name;
     private String password;
     private String email;
-    private int phoneNumber;
+    private String phoneNumber;
 
     public User(String name, String password) {
         setName(name);
@@ -15,7 +15,7 @@ public class User implements Comparable<User> {
         setEmail(email);
     }
 
-    public User(String name, String password, String email, int phoneNumber) {
+    public User(String name, String password, String email, String phoneNumber) {
         setName(name);
         this.password = password;
         setEmail(email);
@@ -56,11 +56,11 @@ public class User implements Comparable<User> {
 
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return this.phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -94,6 +94,19 @@ public class User implements Comparable<User> {
         return true;
     }
 
+    public boolean isPhoneNumberValid(String phoneNumber) {
+        if (phoneNumber == null || phoneNumber.isEmpty()) {
+            return false;
+        }
+
+        String trimmedPhoneNumber = phoneNumber.trim();
+
+        if(!trimmedPhoneNumber.matches("^\\d{8}$")){
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -110,7 +123,7 @@ public class User implements Comparable<User> {
             stringBuilder.append("Email: ").append(this.email).append(" | ");
         }
 
-        if (this.phoneNumber != 0) {
+        if (this.phoneNumber != null) {
             stringBuilder.append("Phone number: ").append(this.phoneNumber).append(" | ");
         }
 

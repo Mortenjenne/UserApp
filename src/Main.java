@@ -37,9 +37,9 @@ public class Main {
         users.add(new User("Anna", "Annie56", "anna@hotmail.com"));
         users.add(new User("Thomas", "Thom123", "thomas@mail.dk"));
 
-        users.add(new User("Camilla", "Cam456", "camilla@mail.dk", 98765432));
-        users.add(new User("Ida", "Blaabaer35", "ida1984@gmail.com", 54679823));
-        users.add(new User("Peter", "Peter99", "peter@mail.com", 12345678));
+        users.add(new User("Camilla", "Cam456", "camilla@mail.dk", "98765432"));
+        users.add(new User("Ida", "Blaabaer35", "ida1984@gmail.com", "54679823"));
+        users.add(new User("Peter", "Peter99", "peter@mail.com", "12345678"));
 
         return users;
     }

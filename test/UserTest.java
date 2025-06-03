@@ -63,7 +63,7 @@ class UserTest {
 
     @Test
     public void testToStringWithAllFields() {
-        User user = new User("Jesper", "pass", "jesper@mail.com", 123456);
+        User user = new User("Jesper", "pass", "jesper@mail.com", "123456");
         String expected = "Name: Jesper | Password: pass | Email: jesper@mail.com | Phone number: 123456";
         assertEquals(expected,user.toString());
     }
